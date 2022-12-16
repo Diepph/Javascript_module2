@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target"></p>
+    <ul id="list"></ul>
+
+    <script>
+        /*
+           Write a function that returns a random dice roll between 1 and 6. The function should not have any parameters. 
+           Write a main program that rolls the dice until the result is 6. 
+           The main program should print out the result of each roll in an unordered list (<ul>)
+        */
+        function roll_dice() {
+            dice = Math.floor(Math.random() * 6) + 1;
+           return dice    
+        }
+        
+        while (true) {
+            var dice = roll_dice();
+            var li = document.createElement('li');
+                li.textContent = dice;
+                list.appendChild(li);
+            if (dice ===6) {
+                break;
+            } 
+        }
+        
+    </script>
+</body>
+</html>

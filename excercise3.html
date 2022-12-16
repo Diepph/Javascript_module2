@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target"></p>
+    <ul id="list"></ul>
+
+    <script>
+        /*
+            Write a program that asks for the names of six dogs. 
+            The program prints dog names to unordered list <ul> in reverse alphabetical order.
+        */
+        const dogs = [];
+        
+        for (let index = 0; index < 6; index++) {
+            const name = prompt('Enter the name: ');
+            dogs.push(name);
+            //console.log(names);
+        }
+        dogs.sort();
+        dogs.reverse();
+        
+        var list =  document.getElementById('list');
+        for (let index = 0; index < 6; index++) {
+            var li = document.createElement('li');
+            li.textContent = dogs[index];
+            list.appendChild(li);
+        }
+
+       
+        //document.getElementById("target").innerHTML = names;
+    </script>
+</body>
+</html>

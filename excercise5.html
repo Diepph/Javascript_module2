@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target"></p>
+    <ul id="list"></ul>
+
+    <script>
+        /*
+           Write a program that prompts the user for numbers. When the user enters one of the numbers he previously entered, 
+           the program will announce that the number has already been given and stops its operation and then prints all the given numbers to the console in ascending order.
+        */
+        const numbers = [];   
+        var checkCondition  = 0; 
+        const firstNumber = parseInt(prompt("Enter a number of participants"), 10);
+        numbers.push(firstNumber);
+        while (checkCondition ===0) {
+                const number = parseInt(prompt("Enter abc number of participants"), 10);
+                for (let index = 0; index < numbers.length; index++) {
+                    console.log(numbers.length);
+                    if (number == numbers[index]) {
+                        checkCondition = 1;
+                        console.log("found");
+                        break;
+                    }else{
+                        numbers.push(number);
+                    }
+                    
+                }
+        }
+        
+        //numbers.sort();
+        //numbers.reverse()       
+       
+        document.getElementById("target").innerHTML = numbers;
+    </script>
+</body>
+</html>

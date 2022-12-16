@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target"></p>
+    <p id="target2"></p>
+
+    <script>
+        var candidates = [];
+        const candidateNumber = parseInt(prompt("Enter a number of participants"), 10);
+        for (var i=0; i<candidateNumber; i++) {
+            var candidateName= prompt("Enter name for candidate " +(i+1));
+            candidates[i] = {
+                name: candidateName,
+                votes: 0
+            };
+        }
+        const votingNumber = parseInt(prompt("Enter a number of participants"), 10);
+        for (var y = 0; y < votingNumber; y++) {
+            var candidateName= prompt("Enter name, you vote for");
+                for (let x = 0; x < candidates.length; x++) {
+                    if (candidates[x].name==candidateName) {
+                        candidates[x].votes+=1;
+                    }
+                }
+        }
+        var sortedCandidates = candidates.sort((c1, c2) => (c1.votes < c2.votes) ? 1 : (c1.votes > c2.votes) ? -1 : 0);
+
+        console.log(sortedCandidates);
+        //document.getElementById("target").innerHTML = result;
+        //document.getElementById("target2").innerHTML = candidates.name;
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target"></p>
+    <ol id="list"></ol>
+
+    <script>
+        /*
+            Write a program that asks the user for the number of participants. After this, the program asks for the names of all participants. 
+            Finally, the program prints the names of the participants on the web page in an ordered list (<ol>) in alphabetical order. (2p)
+        */
+        const names = [];
+        var numbers = parseInt(prompt("Enter a number of participants"), 10);
+
+        for (let index = 0; index < numbers; index++) {
+            
+            const name = prompt('Enter the name: ');
+            names.push(name);
+            console.log(names);
+        }
+        names.sort();
+        
+        var list =  document.getElementById('list');
+        for (let index = 0; index < numbers; index++) {
+            var li = document.createElement('li');
+            li.textContent = names[index];
+            list.appendChild(li);
+        }
+
+       
+        //document.getElementById("target").innerHTML = names;
+    </script>
+</body>
+</html>

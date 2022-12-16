@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="numbers"></p>
+    <p id="evenNumbers"></p>
+
+    <script>
+        const numbers = [11,12,13,14,15,16,21,59,84,64];
+
+        function call_me(params) {
+            const evenNumbers = [];
+            for (i=0; i<params.length; i++) {
+                if(params[i] % 2 ===0){
+                    evenNumbers.push(params[i]);
+                }
+            }
+            return evenNumbers
+        }
+
+        document.getElementById("numbers").innerHTML = "Originary array: " + numbers;
+        document.getElementById("evenNumbers").innerHTML = "New array after sorting: " + call_me(numbers);
+    </script>
+</body>
+</html>
